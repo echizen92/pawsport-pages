@@ -43,10 +43,11 @@
   <tr><td>Trips and bookings, if you have Pawsport Pro</td><td>So the same trip is on your phone and in your browser. Deleted from the server when you delete them in the app.</td></tr>
   <tr><td>Groups you create or join: the name you give, the group's plan, suggestions, votes and shared expenses</td><td>So everyone in the group sees the same plan and the same split.</td></tr>
   <tr><td>Your location, only while you share it with a group</td><td>So the group can meet up. Only the latest position is kept.</td></tr>
-  <tr><td>Your position, when you look for places near you — logging where you are, nearby search, recommended places</td><td>To look up the places around you. It is used for that lookup and not stored with your identifier.</td></tr>
+  <tr><td>Your position, when you look for places near you — logging where you are, nearby search, recommended places, or asking Pawsport for somewhere nearby during a trip</td><td>To look up the places around you. It is rounded to about 100 metres for questions, used for that lookup, and not stored with your identifier.</td></tr>
   <tr><td>Emails you forward to Pawsport</td><td>To read the booking out of them. The booking waits for you to add or dismiss it.</td></tr>
   <tr><td>Cats you post to Locals: the photo, a caption and a rounded location</td><td>To show them to other travellers. The location is rounded so it never points to a doorstep.</td></tr>
   <tr><td>Places you check in at, guides you rate or report, people you block</td><td>For your stamps, and to keep shared content honest.</td></tr>
+  <tr><td>The picture for a link you share: a card with the trip's name, dates and the shape of its route (no photos)</td><td>So the link shows which trip it is when pasted into a chat. It is kept with the shared link.</td></tr>
   <tr><td>Browsers you sign in to on the web</td><td>So you can see and sign out each one from your phone.</td></tr>
   <tr><td>How many AI plans you have used for each trip</td><td>For the free allowance.</td></tr>
   <tr><td>A notification token</td><td>To send the reminders you turn on.</td></tr>
@@ -55,7 +56,7 @@
 <h2>Who else sees what</h2>
 <p>Pawsport uses a few services to do its job, and sends each only what that job needs:</p>
 <ul>
-  <li><b>AI providers</b> — the text of a request (for example "5 days in Kyoto, mostly food", or a booking confirmation you import) is sent to the AI model that answers it. It is not sent with your identifier.</li>
+  <li><b>AI providers</b> — the text of a request (for example "5 days in Kyoto, mostly food", a booking confirmation you import, or a plan you paste from another assistant) is sent to the AI model that answers it. When you ask about a trip, the trip's plan, the hotels and bookings for its dates and — during the trip — your rounded position go with the question, so the answer can be about where you are and where you are staying. None of it is sent with your identifier.</li>
   <li><b>Place and map data</b> — place names are looked up with OpenStreetMap (Nominatim and OpenFreeMap), Wikipedia/Wikimedia and Google Places, for search, maps, opening hours and photos.</li>
   <li><b>Email</b> — forwarded confirmations arrive through our email provider, AgentMail.</li>
   <li><b>Apple</b> — purchases are made and managed by Apple. Pawsport receives a confirmation that you have Pro, never your payment details.</li>
