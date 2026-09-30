@@ -27,7 +27,7 @@
 <main>
 <header><a href="./" style="display:flex;align-items:center;gap:10px;color:inherit;text-decoration:none"><img src="icon-96.png" alt=""><b>Pawsport</b></a></header>
 <h1>Privacy</h1>
-<p class="meta">Last updated 28 September 2026</p>
+<p class="meta">Last updated 30 September 2026</p>
 
 <p>Pawsport plans trips. This page says what it keeps, where, and why — in plain words. The short version: most of your trip lives on your phone; the server keeps only what a feature you use needs; nothing is sold, and there is no advertising or tracking.</p>
 
@@ -35,7 +35,7 @@
 <p>Pawsport doesn't ask for your name, email or phone number to use it. Your phone makes a random identifier the first time it opens, and the server knows you only by that. There are no ads, no advertising identifiers and no third-party analytics.</p>
 
 <h2>What stays on your phone</h2>
-<p>Your trips, stops, notes, bookings, expenses, photos you attach, your packing list and your logbook are stored on your device. Your photo library is only read on your phone, to match photos to the places on a trip you planned; photos are not uploaded for this.</p>
+<p>Your trips, stops, notes, bookings, expenses, photos you attach, your packing list, your logbook and your passport details (which country it's from, and its expiry date if you add it) are stored on your device. Your photo library is only read on your phone, to match photos to the places on a trip you planned; photos are not uploaded for this.</p>
 
 <h2>What the server keeps, and why</h2>
 <table>
@@ -44,6 +44,7 @@
   <tr><td>Groups you create or join: the name you give, the group's plan, suggestions, votes and shared expenses</td><td>So everyone in the group sees the same plan and the same split.</td></tr>
   <tr><td>Your location, only while you share it with a group</td><td>So the group can meet up. Only the latest position is kept.</td></tr>
   <tr><td>Your position, when you look for places near you — logging where you are, nearby search, recommended places, or asking Pawsport for somewhere nearby during a trip</td><td>To look up the places around you. It is rounded to about 100 metres for questions, used for that lookup, and not stored with your identifier.</td></tr>
+  <tr><td>Your passport's country and a trip's country, when Trip ready checks the entry rules</td><td>To look up the visa, passport and arrival-card rules for that pair of countries. The answer is kept against the two countries so the next traveller with the same passport doesn't need a new lookup — not against you or your identifier. Your passport's expiry date is never sent.</td></tr>
   <tr><td>Emails you forward to Pawsport</td><td>To read the booking out of them. The booking waits for you to add or dismiss it.</td></tr>
   <tr><td>Cats you post to Locals: the photo, a caption and a rounded location</td><td>To show them to other travellers. The location is rounded so it never points to a doorstep.</td></tr>
   <tr><td>Places you check in at, guides you rate or report, people you block</td><td>For your stamps, and to keep shared content honest.</td></tr>
@@ -56,7 +57,7 @@
 <h2>Who else sees what</h2>
 <p>Pawsport uses a few services to do its job, and sends each only what that job needs:</p>
 <ul>
-  <li><b>AI providers</b> — the text of a request (for example "5 days in Kyoto, mostly food", a booking confirmation you import, or a plan you paste from another assistant) is sent to the AI model that answers it. When you ask about a trip, the trip's plan, the hotels and bookings for its dates and — during the trip — your rounded position go with the question, so the answer can be about where you are and where you are staying. None of it is sent with your identifier.</li>
+  <li><b>AI providers</b> — the text of a request (for example "5 days in Kyoto, mostly food", a booking confirmation you import, or a plan you paste from another assistant) is sent to the AI model that answers it. For entry rules, only the two countries are sent, to a model that searches official sources. When you ask about a trip, the trip's plan, the hotels and bookings for its dates and — during the trip — your rounded position go with the question, so the answer can be about where you are and where you are staying. None of it is sent with your identifier.</li>
   <li><b>Place and map data</b> — place names are looked up with OpenStreetMap (Nominatim and OpenFreeMap), Wikipedia/Wikimedia and Google Places, for search, maps, opening hours and photos.</li>
   <li><b>Email</b> — forwarded confirmations arrive through our email provider, AgentMail.</li>
   <li><b>Apple</b> — purchases are made and managed by Apple. Pawsport receives a confirmation that you have Pro, never your payment details.</li>
