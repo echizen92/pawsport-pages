@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="img/icon-96.png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<link rel="stylesheet" href="site.css?v=1">
+<link rel="stylesheet" href="site.css?v=2">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"MobileApplication","name":"Pawsport","operatingSystem":"iOS","applicationCategory":"TravelApplication",
  "description":"AI travel planner and itinerary app: day-by-day plans of real places, bookings in one place, Lock Screen trip days and trip recaps.",
@@ -29,10 +29,11 @@
   <div class="wrap">
     <a class="brand" href="./"><img src="img/icon-96.png" alt="">Pawsport</a>
     <nav class="nav">
+      <a class="hide-sm" href="#how">How it works</a>
       <a class="hide-sm" href="#features">Features</a>
       <a class="hide-sm" href="#friends">With friends</a>
       <a href="support.html">Support</a>
-      <a class="btn btn-ink btn-small" data-store href="#get">Get the app</a>
+      <a class="btn btn-ink btn-small" href="https://apps.apple.com/app/id6808585130?ct=site">Get the app</a>
     </nav>
   </div>
 </header>
@@ -43,13 +44,7 @@
       <h1>Say where.<span>Get a plan.</span></h1>
       <p class="lede">Pawsport turns a place, or just an idea like cherry blossoms or a ski week, into day-by-day plans of real places. It keeps every booking in one place and walks each day with you, from your Lock Screen to the recap.</p>
       <div class="ctas" id="get">
-        <span class="soon" data-soon>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-          Coming soon to the App Store
-        </span>
-        <a data-badge hidden href="https://apps.apple.com/app/id6808585130?ct=site">
-          <img class="store-badge" src="https://tools.applemarketingtools.com/api/badges/download-on-the-app-store/black/en-us" alt="Download on the App Store">
-        </a>
+        <a class="badge-link" href="https://apps.apple.com/app/id6808585130?ct=site"><img class="store-badge" src="img/app-store-badge-black.svg" alt="Download on the App Store" width="162" height="54"></a>
       </div>
       <p class="note">For iPhone. Free to start. Joining a friend's trip? Open their link: <a href="https://ai.kachingz.com/pawsport-app/">no app needed</a>.</p>
     </div>
@@ -57,42 +52,71 @@
   </div>
 </section>
 
-<section class="gallery">
+<section class="section" id="how">
   <div class="wrap">
-    <h2>A whole trip, in one app.</h2>
-    <p class="sub">From the first idea to the recap you share when you're home.</p>
-    <div class="strip" aria-label="Pawsport screens">
-      <img src="img/01-where.jpg" alt="Say where. Get a plan." loading="lazy">
-      <img src="img/02-real-places.jpg" alt="Real places, real hours: Pawsport checks Google Maps as it plans" loading="lazy">
-      <img src="img/03-explore.jpg" alt="Explore any city" loading="lazy">
-      <img src="img/04-day-by-day.jpg" alt="Day by day" loading="lazy">
-      <img src="img/05-bookings.jpg" alt="Bookings file themselves" loading="lazy">
-      <img src="img/06-lock-screen.jpg" alt="Next stop, at a glance, on the Lock Screen" loading="lazy">
-      <img src="img/07-recap.jpg" alt="A recap of every trip" loading="lazy">
-      <img src="img/08-locals.jpg" alt="Catch every cat you meet" loading="lazy">
+    <h2>From idea to itinerary in a minute.</h2>
+    <p class="sub">No forms, no account. Tell it where, and when.</p>
+    <div class="steps">
+      <div class="step"><h3>Say where</h3><p>A city, a country, or just a feeling: "somewhere warm in March", "food in Osaka".</p></div>
+      <div class="step"><h3>Get a plan</h3><p>Day-by-day plans of real places, each day kept to one or two areas. Swap anything you don't fancy.</p></div>
+      <div class="step"><h3>Go</h3><p>Your bookings file themselves, the day follows you on the Lock Screen, and every stop gets stamped.</p></div>
     </div>
   </div>
 </section>
 
-<section class="section" id="features">
+<section class="section" id="features" style="padding-top:8px">
   <div class="wrap">
-    <h2>Everything a trip needs.</h2>
-    <p class="sub">Planning, bookings and the days themselves, in one place.</p>
+    <div class="spot">
+      <img src="img/02-real-places.jpg" alt="Pawsport checks Google Maps for real places and opening hours as it plans" loading="lazy">
+      <div>
+        <p class="kicker">Planning</p>
+        <h3>Plans you can actually walk.</h3>
+        <p>Every stop exists. Pawsport checks Google Maps for ratings and opening hours as it plans, so you don't arrive at a museum that shut on Mondays.</p>
+        <p>Already planned it in ChatGPT or Gemini? Paste it in and Pawsport checks every place and turns it into a trip.</p>
+      </div>
+    </div>
+    <div class="spot">
+      <img src="img/05-bookings.jpg" alt="Flights, hotels and trains filed on the right day" loading="lazy">
+      <div>
+        <p class="kicker">Bookings</p>
+        <h3>Forward the email. That's it.</h3>
+        <p>Forward the confirmation email, or drop in a PDF or screenshot. Flights, hotels, trains, ferries, cars and tables land on the right day, with the reference to hand.</p>
+      </div>
+    </div>
+    <div class="spot">
+      <img src="img/06-lock-screen.jpg" alt="The next stop and a countdown on the iPhone Lock Screen" loading="lazy">
+      <div>
+        <p class="kicker">On the day</p>
+        <h3>Know when to leave.</h3>
+        <p>Where you're going next and how long until you need to leave, on the Lock Screen and in the Dynamic Island. Check in with a tap, or ask Siri what's next.</p>
+        <ul>
+          <li>Home Screen widgets for the day</li>
+          <li>Maps and your plan that work with no signal</li>
+        </ul>
+      </div>
+    </div>
+    <div class="spot">
+      <img src="img/07-recap.jpg" alt="A recap of a trip with photos and stamps" loading="lazy">
+      <div>
+        <p class="kicker">Afterwards</p>
+        <h3>Come home with the story.</h3>
+        <p>Check in at each stop and add your photos. When you're home there's a logbook and a recap to share, and every place you went is stamped in your passport.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:8px">
+  <div class="wrap">
+    <h2>And the rest of it.</h2>
+    <p class="sub">The small things that make a trip go smoothly.</p>
     <div class="grid">
-      <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
-        <h3>Real places, real hours</h3><p>Plans are built from places that exist, checked against Google Maps for ratings and opening hours, and grouped so each day stays in one or two areas.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <h3>Trip ready</h3><p>What your passport needs to get in, the arrival card, nights still without a bed, and a packing list worked out from the weather on your dates.</p></div>
       <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
         <h3>Ask about anything</h3><p>What's open late near your hotel, whether you need cash, a quieter spot for the afternoon. Pawsport answers and changes the plan when you ask.</p></div>
-      <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/></svg></div>
-        <h3>Bookings file themselves</h3><p>Forward the confirmation email, or drop in a PDF or screenshot. Flights, hotels, trains, ferries, cars and tables land on the right day.</p></div>
-      <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 18h4"/></svg></div>
-        <h3>Your day, at a glance</h3><p>Your next stop and a countdown on the Lock Screen and in the Dynamic Island, widgets for your Home Screen, and maps that work with no signal.</p></div>
-      <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
-        <h3>Trip ready</h3><p>What your passport needs to get in, whether it's valid long enough, the arrival card, nights still without a bed, and the few things worth knowing before you land.</p></div>
       <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
         <h3>Explore any city</h3><p>Top sights, food, cafés and markets with photos and ratings, how to get around, and day trips worth taking. Add anything to a day in one tap.</p></div>
-      <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zm0 0a2 2 0 0 0 2 2h13"/></svg></div>
-        <h3>A recap of every trip</h3><p>Check in at each stop, add your photos, and get a logbook and a recap to share, with every place you went stamped in your passport.</p></div>
       <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4c-4 0-7 3-7 7v7l3-2 2 2 2-2 2 2 2-2 3 2v-7c0-4-3-7-7-7z"/><circle cx="9.5" cy="10" r="1"/><circle cx="14.5" cy="10" r="1"/></svg></div>
         <h3>Catch the locals</h3><p>Every cat you meet on the way becomes a card in your collection, and some of them are legends.</p></div>
     </div>
@@ -143,6 +167,16 @@
 </section>
 
 <section class="section" style="padding-top:8px">
+  <div class="wrap">
+    <div class="promise">
+      <div><b>No account</b><span>No sign-up, no email, no password. Your trips live on your phone.</span></div>
+      <div><b>No ads</b><span>No advertising in the app. Some Trip.com booking links earn us a commission, at no cost to you.</span></div>
+      <div><b>No tracking</b><span>No advertising identifiers, no third-party analytics, nothing sold. Delete it all in one tap.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:8px">
   <div class="narrow">
     <h2>Questions</h2>
     <details><summary>Is Pawsport on Android?</summary><p>Not yet. Pawsport is for iPhone. Friends on Android can still join a trip you share: it opens in their browser.</p></details>
@@ -150,6 +184,16 @@
     <details><summary>Can I trust the visa and entry rules?</summary><p>Pawsport reads them from official sources and shows where and when it checked. Rules change, so always confirm with the embassy before you fly.</p></details>
     <details><summary>How do I delete my data?</summary><p>In the app, open your profile and tap <i>Delete my data</i>. It happens straight away. See the <a href="privacy.html">privacy policy</a> for what's kept and why.</p></details>
     <p style="margin-top:22px">More in <a href="support.html">Support</a>.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:8px">
+  <div class="wrap">
+    <div class="final">
+      <img class="cat" src="img/icon-192.png" alt="">
+      <div><h2>Where to next?</h2><p>Plan your first trip free, on iPhone.</p></div>
+      <a class="badge-link" href="https://apps.apple.com/app/id6808585130?ct=site"><img class="store-badge" src="img/app-store-badge-black.svg" alt="Download on the App Store" width="162" height="54" loading="lazy"></a>
+    </div>
   </div>
 </section>
 
@@ -164,14 +208,5 @@
     </nav>
   </div>
 </footer>
-<script>
-// The App Store buttons turn on by themselves once the listing is live.
-fetch('https://ai.kachingz.com/pawsport/api/app-status/public').then(function (r) { return r.json(); }).then(function (d) {
-  if (!d || !d.live) return;
-  document.querySelectorAll('[data-soon]').forEach(function (e) { e.hidden = true; e.style.display = 'none'; });
-  document.querySelectorAll('[data-badge]').forEach(function (e) { e.hidden = false; });
-  document.querySelectorAll('[data-store]').forEach(function (e) { e.href = 'https://apps.apple.com/app/id6808585130?ct=site'; });
-}).catch(function () {});
-</script>
 </body>
 </html>
