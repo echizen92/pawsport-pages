@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Pawsport — AI travel planner and itinerary app for iPhone</title>
 <meta name="description" content="Say where you're going and get a day-by-day plan of real places. Every booking in one place, your next stop on the Lock Screen, and a recap of every trip.">
-<meta name="theme-color" content="#F4553A">
+<meta name="theme-color" content="#F6F1E7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#13110E" media="(prefers-color-scheme: dark)">
 <meta name="apple-itunes-app" content="app-id=6808585130">
 <link rel="canonical" href="https://pawsport.kachingz.com/">
 <meta property="og:type" content="website">
@@ -17,7 +18,11 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="img/icon-96.png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<link rel="stylesheet" href="site.css?v=2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="site.css?v=3">
+<script>document.documentElement.classList.add('js')</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"MobileApplication","name":"Pawsport","operatingSystem":"iOS","applicationCategory":"TravelApplication",
  "description":"AI travel planner and itinerary app: day-by-day plans of real places, bookings in one place, Lock Screen trip days and trip recaps.",
@@ -25,127 +30,249 @@
 </script>
 </head>
 <body>
-<header class="top">
+<header class="top" id="top">
   <div class="wrap">
     <a class="brand" href="./"><img src="img/icon-96.png" alt="">Pawsport</a>
     <nav class="nav">
       <a class="hide-sm" href="#how">How it works</a>
-      <a class="hide-sm" href="#features">Features</a>
+      <a class="hide-sm" href="#trip">The trip</a>
       <a class="hide-sm" href="#friends">With friends</a>
-      <a href="support.html">Support</a>
+      <a class="hide-sm" href="support.html">Support</a>
       <a class="btn btn-ink btn-small" href="https://apps.apple.com/app/id6808585130?ct=site">Get the app</a>
     </nav>
   </div>
 </header>
 
+<main>
 <section class="hero">
   <div class="wrap">
     <div>
-      <h1>Say where.<span>Get a plan.</span></h1>
-      <p class="lede">Pawsport turns a place, or just an idea like cherry blossoms or a ski week, into day-by-day plans of real places. It keeps every booking in one place and walks each day with you, from your Lock Screen to the recap.</p>
-      <div class="ctas" id="get">
-        <a class="badge-link" href="https://apps.apple.com/app/id6808585130?ct=site"><img class="store-badge" src="img/app-store-badge-black.svg" alt="Download on the App Store" width="162" height="54"></a>
+      <p class="eyebrow rv">AI travel planner for iPhone</p>
+      <h1><span class="l rv" style="--d:.05s">Say <em>where.</em></span><span class="l rv" style="--d:.18s">Get a plan.</span></h1>
+      <div class="ask rv" style="--d:.3s" aria-hidden="true">
+        <svg class="pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+        <span class="q" id="typed">Kyoto in cherry blossom season</span>
+        <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </div>
-      <p class="note">For iPhone. Free to start. Joining a friend's trip? Open their link: <a href="https://ai.kachingz.com/pawsport-app/">no app needed</a>.</p>
+      <p class="lede rv" style="--d:.4s">Pawsport turns a place, or just an idea like cherry blossoms or a ski week, into day-by-day plans of real places. It keeps every booking in one place and walks each day with you, from your Lock Screen to the recap.</p>
+      <div class="ctas rv" style="--d:.5s">
+        <a class="badge-link" href="https://apps.apple.com/app/id6808585130?ct=site"><img class="store-badge badge-light" src="img/app-store-badge-black.svg" alt="Download on the App Store" width="162" height="54"><img class="store-badge badge-dark" src="img/app-store-badge-white.svg" alt="Download on the App Store" width="162" height="54"></a>
+      </div>
+      <p class="note rv" style="--d:.55s">Free to start. Joining a friend's trip? Open their link: <a href="https://ai.kachingz.com/pawsport-app/">no app needed</a>.</p>
     </div>
-    <img class="phone" src="img/hero-day.jpg" alt="A day-by-day Pawsport plan for a trip, on an iPhone">
+
+    <div class="stage">
+      <svg class="route" viewBox="0 0 640 760" preserveAspectRatio="none" aria-hidden="true">
+        <path id="flight" class="draw" d="M40 690 C 150 560, 30 430, 170 330 S 460 250, 470 140 S 560 30, 620 40"/>
+        <circle cx="40" cy="690" r="6"/>
+        <circle cx="620" cy="40" r="6"/>
+        <g class="plane"><path d="M-9 0 L9 0 M2 -7 L6 0 L2 7 M-7 -3 L-5 0 L-7 3" stroke="var(--coral)" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <animateMotion dur="9s" begin="1.2s" repeatCount="indefinite" rotate="auto" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".45 0 .55 1"><mpath href="#flight"/></animateMotion></g>
+      </svg>
+      <div class="phone px" data-speed="-0.06"><div class="screen"><img src="img/app/today.jpg" alt="Pawsport's Today screen: a 12-day Shanghai trip with the day's stops on a map" width="660" height="1434"></div></div>
+      <img class="livecard px" data-speed="-0.16" src="img/app/live-card.png" alt="The next stop on the Lock Screen: Tirta Empul at 11:53, stop 2 of 4" width="900" height="310">
+      <svg class="stamp px" data-speed="0.12" viewBox="0 0 160 160" aria-hidden="true">
+        <circle cx="80" cy="80" r="74" fill="none" stroke="currentColor" stroke-width="3"/>
+        <circle cx="80" cy="80" r="64" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 4"/>
+        <defs><path id="arc" d="M80 80 m-52 0 a52 52 0 1 1 104 0 a52 52 0 1 1 -104 0"/></defs>
+        <text font-size="12.5" letter-spacing="3"><textPath href="#arc" startOffset="2%">PAWSPORT · ARRIVED · PAWSPORT · ARRIVED ·</textPath></text>
+        <text x="80" y="78" text-anchor="middle" font-size="19" letter-spacing="1">SHANGHAI</text>
+        <text x="80" y="98" text-anchor="middle" font-size="11" letter-spacing="1.5">10 OCT 2026</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="track">
+      <span>Kyoto</span><i></i><span>Lisbon</span><i></i><span>Bali</span><i></i><span>Seoul</span><i></i><span>Mexico City</span><i></i><span>Istanbul</span><i></i><span>Hanoi</span><i></i><span>Marrakech</span><i></i><span>Reykjavík</span><i></i><span>Cape Town</span><i></i><span>Shanghai</span><i></i><span>Buenos Aires</span><i></i>
+      <span>Kyoto</span><i></i><span>Lisbon</span><i></i><span>Bali</span><i></i><span>Seoul</span><i></i><span>Mexico City</span><i></i><span>Istanbul</span><i></i><span>Hanoi</span><i></i><span>Marrakech</span><i></i><span>Reykjavík</span><i></i><span>Cape Town</span><i></i><span>Shanghai</span><i></i><span>Buenos Aires</span><i></i>
+    </div>
   </div>
 </section>
 
 <section class="section" id="how">
   <div class="wrap">
-    <h2>From idea to itinerary in a minute.</h2>
-    <p class="sub">No forms, no account. Tell it where, and when.</p>
-    <div class="steps">
-      <div class="step"><h3>Say where</h3><p>A city, a country, or just a feeling: "somewhere warm in March", "food in Osaka".</p></div>
-      <div class="step"><h3>Get a plan</h3><p>Day-by-day plans of real places, each day kept to one or two areas. Swap anything you don't fancy.</p></div>
-      <div class="step"><h3>Go</h3><p>Your bookings file themselves, the day follows you on the Lock Screen, and every stop gets stamped.</p></div>
+    <p class="eyebrow rv">How it works</p>
+    <h2 class="h2 rv">From idea to itinerary <em>in a minute.</em></h2>
+    <p class="sub rv">No forms, no account. Tell it where, and when.</p>
+    <ol class="legs">
+      <li class="rv"><span class="t">09:00 · Stop 1 of 3</span><div class="dot"></div><h3>Say where</h3><p>A city, a country, or just a feeling: "somewhere warm in March", "food in Osaka".</p></li>
+      <li class="rv" style="--d:.12s"><span class="t">09:01 · Stop 2 of 3</span><div class="dot"></div><h3>Get a plan</h3><p>Day-by-day plans of real places, each day kept to one or two areas. Swap anything you don't fancy.</p></li>
+      <li class="rv" style="--d:.24s"><span class="t">Day 1 · Stop 3 of 3</span><div class="dot"></div><h3>Go</h3><p>Your bookings file themselves, the day follows you on the Lock Screen, and every stop gets stamped.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section tight" id="trip">
+  <div class="wrap">
+    <p class="eyebrow rv">The trip, start to finish</p>
+    <h2 class="h2 rv">One app for the <em>whole</em> journey.</h2>
+    <div class="chapters">
+      <div class="sticky" aria-hidden="true">
+        <div class="ring"></div>
+        <div class="phone"><div class="screen" id="screens">
+          <img class="on" src="img/app/itinerary.jpg" alt="">
+          <img src="img/app/explore.jpg" alt="" loading="lazy">
+          <img src="img/app/ask.jpg" alt="" loading="lazy">
+          <img src="img/app/transit.jpg" alt="" loading="lazy">
+          <div class="lock"><div class="di"><span><img src="img/icon-96.png" alt="">Tirta Empul</span><b>11:53</b></div><span class="d">Friday 25 September</span><span class="tm">9:41</span><img class="lc" src="img/app/live-card.png" alt="" loading="lazy"></div>
+          <img src="img/app/recap-cover.jpg" alt="" loading="lazy">
+        </div></div>
+      </div>
+      <div>
+        <article class="chapter" data-i="0">
+          <figure><div class="phone"><div class="screen"><img src="img/app/itinerary.jpg" alt="A day of the itinerary with stops, walking times and bookings" loading="lazy"></div></div></figure>
+          <p class="n">01 — Planning</p>
+          <h3>Plans you can actually walk.</h3>
+          <p>Every stop exists. Pawsport checks Google Maps for ratings and opening hours as it plans, so you don't arrive at a museum that shut on Mondays.</p>
+          <ul class="ticks"><li>Each day kept to one or two areas</li><li>Walking and transit times between stops</li><li>Drag to reorder, swap anything</li></ul>
+        </article>
+        <article class="chapter" data-i="1">
+          <figure><div class="phone"><div class="screen"><img src="img/app/explore.jpg" alt="Explore Shanghai: top sights with photos and ratings" loading="lazy"></div></div></figure>
+          <p class="n">02 — Explore</p>
+          <h3>Every city, opened up.</h3>
+          <p>Top sights, food, cafés and markets with photos and ratings, how to get around, and day trips worth taking. Add anything to a day in one tap.</p>
+        </article>
+        <article class="chapter" data-i="2">
+          <figure><div class="phone"><div class="screen"><img src="img/app/ask.jpg" alt="Asking Pawsport for soup dumplings near Yu Garden, and it adds one to the plan" loading="lazy"></div></div></figure>
+          <p class="n">03 — Ask</p>
+          <h3>Ask about anything. It changes the plan.</h3>
+          <p>What's open late near your hotel, whether you need cash, a quieter spot for the afternoon. Pawsport answers, checks the place is open, and adds it when you say so.</p>
+        </article>
+        <article class="chapter" data-i="3">
+          <figure><div class="phone"><div class="screen"><img src="img/app/transit.jpg" alt="A flight from Shanghai to Singapore filed with its gate and terminal" loading="lazy"></div></div></figure>
+          <p class="n">04 — Bookings</p>
+          <h3>Forward the email. That's it.</h3>
+          <p>Forward the confirmation, or drop in a PDF or screenshot. Flights, hotels, trains, ferries, cars and tables land on the right day, with the reference to hand.</p>
+        </article>
+        <article class="chapter" data-i="4">
+          <figure><div class="phone"><div class="screen"><div class="lock"><div class="di"><span><img src="img/icon-96.png" alt="">Tirta Empul</span><b>11:53</b></div><span class="d">Friday 25 September</span><span class="tm">9:41</span><img class="lc" src="img/app/live-card.png" alt="The next stop and its time on the Lock Screen" loading="lazy"></div></div></div></figure>
+          <p class="n">05 — On the day</p>
+          <h3>Know when to leave.</h3>
+          <p>Where you're going next and how long until you need to leave, on the Lock Screen and in the Dynamic Island. Check in with a tap, or ask Siri what's next.</p>
+          <ul class="ticks"><li>Home Screen widgets for the day</li><li>Maps and your plan that work with no signal</li></ul>
+        </article>
+        <article class="chapter" data-i="5">
+          <figure><div class="phone"><div class="screen"><img src="img/app/recap-cover.jpg" alt="The recap of a Shanghai trip" loading="lazy"></div></div></figure>
+          <p class="n">06 — Afterwards</p>
+          <h3>Come home with the story.</h3>
+          <p>Check in at each stop and add your photos. When you're home there's a logbook and a recap to share, and every place you went is stamped in your passport.</p>
+        </article>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section" id="features" style="padding-top:8px">
+<section class="section tight">
   <div class="wrap">
-    <div class="spot">
-      <img src="img/02-real-places.jpg" alt="Pawsport checks Google Maps for real places and opening hours as it plans" loading="lazy">
-      <div>
-        <p class="kicker">Planning</p>
-        <h3>Plans you can actually walk.</h3>
-        <p>Every stop exists. Pawsport checks Google Maps for ratings and opening hours as it plans, so you don't arrive at a museum that shut on Mondays.</p>
-        <p>Already planned it in ChatGPT or Gemini? Paste it in and Pawsport checks every place and turns it into a trip.</p>
+    <p class="eyebrow rv">And the rest of it</p>
+    <h2 class="h2 rv">The small things that make a trip <em>go smoothly.</em></h2>
+    <div class="bento" style="margin-top:40px">
+      <div class="tile w4 rv">
+        <p class="k">Bookings</p>
+        <h3>Every ticket, on the right day.</h3>
+        <p>With the gate, the seat and the reference, even with no signal.</p>
+        <div class="pass" aria-hidden="true">
+          <div class="main">
+            <div class="cities"><div>PVG<small>Shanghai</small></div><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z" transform="rotate(90 12 12)"/></svg><div>SIN<small>Singapore</small></div></div>
+            <div class="row"><span>Flight<b>SQ 825</b></span><span>Boards<b>7:10 PM</b></span><span>Terminal<b>2</b></span><span>Seat<b>12F</b></span></div>
+          </div>
+          <div class="stub"><div class="bars"></div></div>
+        </div>
+        <div class="filed"><span>Flights</span><span>Hotels</span><span>Trains</span><span>Ferries</span><span>Car hire</span><span>Tables</span></div>
       </div>
-    </div>
-    <div class="spot">
-      <img src="img/05-bookings.jpg" alt="Flights, hotels and trains filed on the right day" loading="lazy">
-      <div>
-        <p class="kicker">Bookings</p>
-        <h3>Forward the email. That's it.</h3>
-        <p>Forward the confirmation email, or drop in a PDF or screenshot. Flights, hotels, trains, ferries, cars and tables land on the right day, with the reference to hand.</p>
+      <div class="tile w2 rv" style="--d:.1s">
+        <p class="k">Trip ready</p>
+        <h3>Nothing forgotten.</h3>
+        <p>Entry rules for your passport, the arrival card, nights without a bed, and packing for the weather on your dates.</p>
+        <div class="ready" aria-hidden="true">
+          <div class="ring" id="ring"><b id="ringn">75</b></div>
+          <ul><li class="ok"><i></i>Visa-free, 30 days</li><li class="ok"><i></i>Arrival card</li><li class="ok"><i></i>A bed every night</li><li><i></i>Pack a light jacket</li></ul>
+        </div>
       </div>
-    </div>
-    <div class="spot">
-      <img src="img/06-lock-screen.jpg" alt="The next stop and a countdown on the iPhone Lock Screen" loading="lazy">
-      <div>
-        <p class="kicker">On the day</p>
-        <h3>Know when to leave.</h3>
-        <p>Where you're going next and how long until you need to leave, on the Lock Screen and in the Dynamic Island. Check in with a tap, or ask Siri what's next.</p>
-        <ul>
-          <li>Home Screen widgets for the day</li>
-          <li>Maps and your plan that work with no signal</li>
-        </ul>
+      <div class="tile w3 rv">
+        <p class="k">Planned it somewhere else?</p>
+        <h3>Paste it from ChatGPT or Gemini.</h3>
+        <p>Pawsport checks every place on Google Maps and turns the list into a trip.</p>
+        <div class="paste" aria-hidden="true">
+          <div><span>Day 1 · Fushimi Inari, early</span><span class="v">✓ on Maps</span></div>
+          <div><span>Day 1 · Nishiki Market</span><span class="v">✓ on Maps</span></div>
+          <div><span>Day 2 · Kinkaku-ji</span><span class="v">✓ on Maps</span></div>
+          <div><span>Day 2 · Tea house on Ninenzaka</span><span class="x">? check it</span></div>
+        </div>
       </div>
-    </div>
-    <div class="spot">
-      <img src="img/07-recap.jpg" alt="A recap of a trip with photos and stamps" loading="lazy">
-      <div>
-        <p class="kicker">Afterwards</p>
-        <h3>Come home with the story.</h3>
-        <p>Check in at each stop and add your photos. When you're home there's a logbook and a recap to share, and every place you went is stamped in your passport.</p>
+      <div class="tile w3 rv" style="--d:.1s">
+        <p class="k">Siri</p>
+        <p class="say">“What's next in Pawsport?”</p>
+        <p>Ask Siri for your next stop or your next flight, check in hands-free, and find your trips in Spotlight.</p>
+      </div>
+      <div class="tile w2 rv">
+        <p class="k">Offline</p>
+        <div class="nosignal" aria-hidden="true"><i style="height:30%"></i><i style="height:55%"></i><i style="height:78%"></i><i style="height:100%"></i></div>
+        <h3>No signal? No problem.</h3>
+        <p>Your plan, bookings and the map of the trip still work.</p>
+      </div>
+      <div class="tile w4 cat-tile rv" style="--d:.1s">
+        <div class="txt">
+          <p class="k">Catch the locals</p>
+          <h3>Every cat you meet is a card.</h3>
+          <p>Snap the cats you meet on the way and build a collection. Some of them are legends.</p>
+        </div>
+        <img src="img/app/reveal.jpg" alt="A legendary cat card for Lokum, met in Türkiye" loading="lazy">
       </div>
     </div>
   </div>
 </section>
 
-<section class="section" style="padding-top:8px">
+<section class="section friends" id="friends">
   <div class="wrap">
-    <h2>And the rest of it.</h2>
-    <p class="sub">The small things that make a trip go smoothly.</p>
-    <div class="grid">
-      <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
-        <h3>Trip ready</h3><p>What your passport needs to get in, the arrival card, nights still without a bed, and a packing list worked out from the weather on your dates.</p></div>
-      <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-        <h3>Ask about anything</h3><p>What's open late near your hotel, whether you need cash, a quieter spot for the afternoon. Pawsport answers and changes the plan when you ask.</p></div>
-      <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
-        <h3>Explore any city</h3><p>Top sights, food, cafés and markets with photos and ratings, how to get around, and day trips worth taking. Add anything to a day in one tap.</p></div>
-      <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4c-4 0-7 3-7 7v7l3-2 2 2 2-2 2 2 2-2 3 2v-7c0-4-3-7-7-7z"/><circle cx="9.5" cy="10" r="1"/><circle cx="14.5" cy="10" r="1"/></svg></div>
-        <h3>Catch the locals</h3><p>Every cat you meet on the way becomes a card in your collection, and some of them are legends.</p></div>
+    <div>
+      <p class="eyebrow rv">With friends</p>
+      <h2 class="h2 rv">Better <em>together.</em></h2>
+      <p class="sub rv">Share a trip and plan it together. Friends join from a link, in their browser, with no app and no account.</p>
+      <ul class="pts">
+        <li class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span><b>Vote on the plan.</b> Suggest places and decide together what makes it in.</span></li>
+        <li class="rv" style="--d:.08s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M8 9h8M8 13h5"/></svg><span><b>A notice board.</b> Post a poll for breakfast or the lobby meet-up, or a note everyone sees.</span></li>
+        <li class="rv" style="--d:.16s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15 9.5c-.5-1-1.6-1.5-3-1.5-1.7 0-3 .9-3 2s1.3 1.7 3 2 3 .9 3 2-1.3 2-3 2c-1.4 0-2.5-.5-3-1.5M12 6.5v11"/></svg><span><b>Split the bills.</b> In any currency, with who owes whom worked out.</span></li>
+        <li class="rv" style="--d:.24s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span><b>Meet in the middle.</b> Share where you are while the trip's on.</span></li>
+      </ul>
     </div>
-  </div>
-</section>
-
-<section class="section" id="friends" style="padding-top:8px">
-  <div class="wrap">
-    <div class="band">
-      <div>
-        <h2>Better with friends.</h2>
-        <p>Share a trip and plan it together. Friends join from a link, in their browser, with no app and no account.</p>
-        <ul>
-          <li>Suggest places and vote on what makes the plan</li>
-          <li>Split the bills in any currency, and see who owes whom</li>
-          <li>Share where you are while the trip's on, and meet in the middle</li>
-        </ul>
+    <div class="cards" aria-hidden="true">
+      <div class="gcard poll-card rv" id="poll">
+        <div class="hd"><span class="av" style="background:#E2603F">M</span>Mei posted a poll · just now</div>
+        <h4>What time is breakfast tomorrow?</h4>
+        <div class="opt"><span class="fill" data-w="20"></span><span>7:30</span><span class="vs"><span class="faces"><i style="background:#4FA3D9"></i></span><span class="c">1</span></span></div>
+        <div class="opt lead"><span class="fill" data-w="60"></span><span>8:30</span><span class="vs"><span class="faces" id="faces"><i style="background:#E2603F"></i><i style="background:#7C5CD6"></i></span><span class="c" id="leadc">2</span></span></div>
+        <div class="opt"><span class="fill" data-w="0"></span><span>9:00, I'm on holiday</span><span class="vs"><span class="c">0</span></span></div>
       </div>
-      <img class="mascot" src="img/mascot.jpg" alt="Pawsport's explorer cat">
+      <div class="gcard split-card rv" style="--d:.15s" id="split">
+        <div><div class="hd" style="margin:0 0 4px">Dinner · Day 3 · 4 people</div><span class="amt">¥<span id="amt">0.00</span></span></div>
+        <span class="pill">Split 4 ways</span>
+        <div class="who"><span>You owe Mei</span><b>¥<span id="owe">0.00</span></b></div>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="section">
+  <div class="wrap center">
+    <p class="eyebrow rv">Pawsport Pro</p>
+    <h2 class="h2 rv">Plan on your <em>computer.</em></h2>
+    <p class="sub rv">The big screen for the big decisions. Your trips stay in step between your phone and your browser.</p>
+    <div class="laptop" id="laptop">
+      <div class="lid"><img src="img/app/web.jpg" alt="The Pawsport planner in a web browser: a Kyoto trip with a map and the day's stops" width="1600" height="1000" loading="lazy"></div>
+      <div class="base"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
   <div class="wrap">
-    <h2>Free to start.</h2>
-    <p class="sub">Plan your first trip without paying anything.</p>
+    <div class="center"><p class="eyebrow rv">Pricing</p>
+    <h2 class="h2 rv">Free to <em>start.</em></h2>
+    <p class="sub rv">Plan your first trip without paying anything.</p></div>
     <div class="plans">
-      <div class="plan">
+      <div class="plan rv">
         <h3>Pawsport</h3><p class="price">Free</p>
         <ul>
           <li>Three AI plans and ten questions for every trip</li>
@@ -153,7 +280,7 @@
           <li>Plan with friends, logbook, recap and stamps</li>
         </ul>
       </div>
-      <div class="plan pro">
+      <div class="plan pro rv" style="--d:.1s">
         <h3>Pawsport Pro</h3><p class="price">Monthly or yearly subscription, in the app</p>
         <ul>
           <li>No limits on plans and questions</li>
@@ -166,36 +293,40 @@
   </div>
 </section>
 
-<section class="section" style="padding-top:8px">
+<section class="section tight">
   <div class="wrap">
     <div class="promise">
-      <div><b>No account</b><span>No sign-up, no email, no password. Your trips live on your phone.</span></div>
-      <div><b>No ads</b><span>No advertising in the app. Some Trip.com booking links earn us a commission, at no cost to you.</span></div>
-      <div><b>No tracking</b><span>No advertising identifiers, no third-party analytics, nothing sold. Delete it all in one tap.</span></div>
+      <div class="rv"><b>No <em>account.</em></b><span>No sign-up, no email, no password. Your trips live on your phone.</span></div>
+      <div class="rv" style="--d:.1s"><b>No <em>ads.</em></b><span>No advertising in the app. Some Trip.com booking links earn us a commission, at no cost to you.</span></div>
+      <div class="rv" style="--d:.2s"><b>No <em>tracking.</em></b><span>No advertising identifiers, no third-party analytics, nothing sold. Delete it all in one tap.</span></div>
     </div>
   </div>
 </section>
 
-<section class="section" style="padding-top:8px">
-  <div class="narrow">
-    <h2>Questions</h2>
-    <details><summary>Is Pawsport on Android?</summary><p>Not yet. Pawsport is for iPhone. Friends on Android can still join a trip you share: it opens in their browser.</p></details>
-    <details><summary>Do I need an account?</summary><p>No. There's no sign-up, no email and no password. Your trips live on your phone.</p></details>
-    <details><summary>Can I trust the visa and entry rules?</summary><p>Pawsport reads them from official sources and shows where and when it checked. Rules change, so always confirm with the embassy before you fly.</p></details>
-    <details><summary>How do I delete my data?</summary><p>In the app, open your profile and tap <i>Delete my data</i>. It happens straight away. See the <a href="privacy.html">privacy policy</a> for what's kept and why.</p></details>
-    <p style="margin-top:22px">More in <a href="support.html">Support</a>.</p>
+<section class="section tight">
+  <div class="wrap faq">
+    <div><p class="eyebrow rv">Questions</p><h2 class="h2 rv">Good to <em>know.</em></h2><p class="sub rv">More in <a href="support.html">Support</a>.</p></div>
+    <div class="rv">
+      <details><summary>Is Pawsport on Android?</summary><p>Not yet. Pawsport is for iPhone. Friends on Android can still join a trip you share: it opens in their browser.</p></details>
+      <details><summary>Do I need an account?</summary><p>No. There's no sign-up, no email and no password. Your trips live on your phone.</p></details>
+      <details><summary>Can I trust the visa and entry rules?</summary><p>Pawsport reads them from official sources and shows where and when it checked. Rules change, so always confirm with the embassy before you fly.</p></details>
+      <details><summary>How do I delete my data?</summary><p>In the app, open your profile and tap <i>Delete my data</i>. It happens straight away. See the <a href="privacy.html">privacy policy</a> for what's kept and why.</p></details>
+    </div>
   </div>
 </section>
 
-<section class="section" style="padding-top:8px">
+<section class="section tight">
   <div class="wrap">
-    <div class="final">
+    <div class="final rv">
       <img class="cat" src="img/icon-192.png" alt="">
-      <div><h2>Where to next?</h2><p>Plan your first trip free, on iPhone.</p></div>
-      <a class="badge-link" href="https://apps.apple.com/app/id6808585130?ct=site"><img class="store-badge" src="img/app-store-badge-black.svg" alt="Download on the App Store" width="162" height="54" loading="lazy"></a>
+      <h2>Where to next?</h2>
+      <p>Plan your first trip free, on iPhone.</p>
+      <a class="badge-link" href="https://apps.apple.com/app/id6808585130?ct=site"><img class="store-badge" src="img/app-store-badge-black.svg" alt="Download on the App Store" width="174" height="58" loading="lazy"></a>
     </div>
+    <p class="bigmark" aria-hidden="true">Paws<em>port</em></p>
   </div>
 </section>
+</main>
 
 <footer>
   <div class="wrap">
@@ -208,5 +339,106 @@
     </nav>
   </div>
 </footer>
+
+<script>
+(() => {
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Fade things in as they arrive.
+  const rv = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); rv.unobserve(e.target); }
+  }), { rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.rv:not(.hero .rv)').forEach(el => rv.observe(el));
+
+  // The ask bar types where people go.
+  const typed = document.getElementById('typed');
+  const ideas = ['Kyoto in cherry blossom season', 'Food in Osaka', 'Somewhere warm in March', 'Bali, 7 days, slow', 'A ski week in Hokkaido', 'Lisbon with my parents', 'Seoul for the cafés'];
+  if (!still) {
+    let i = 0, n = ideas[0].length, back = true;
+    const tick = () => {
+      const s = ideas[i];
+      if (back) { n--; if (n === 0) { back = false; i = (i + 1) % ideas.length; } typed.textContent = s.slice(0, n); return setTimeout(tick, 28); }
+      const t = ideas[i]; n++; typed.textContent = t.slice(0, n);
+      if (n === t.length) { back = true; return setTimeout(tick, 2200); }
+      setTimeout(tick, 55 + Math.random() * 60);
+    };
+    setTimeout(tick, 2600);
+  }
+
+  // Header line, hero parallax, laptop opening.
+  const top = document.getElementById('top');
+  const px = [...document.querySelectorAll('.px')];
+  const laptop = document.getElementById('laptop');
+  let queued = false;
+  const onScroll = () => {
+    queued = false;
+    const y = scrollY;
+    top.classList.toggle('scrolled', y > 8);
+    if (still) return;
+    if (y < innerHeight * 1.2) px.forEach(el => el.style.translate = `0 ${(y * el.dataset.speed).toFixed(1)}px`);
+    const r = laptop.getBoundingClientRect();
+    const p = Math.min(1, Math.max(0, (innerHeight - r.top) / (innerHeight * .8)));
+    laptop.style.transform = `perspective(1600px) rotateX(${((1 - p) * 24).toFixed(2)}deg) scale(${(.88 + .12 * p).toFixed(3)})`;
+    laptop.style.opacity = (.35 + .65 * p).toFixed(2);
+  };
+  addEventListener('scroll', () => { if (!queued) { queued = true; requestAnimationFrame(onScroll); } }, { passive: true });
+  onScroll();
+
+  // Chapters: the phone shows the screen for the chapter in the middle of the window.
+  const screens = [...document.getElementById('screens').children];
+  const ch = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    const i = +e.target.dataset.i;
+    screens.forEach((s, k) => s.classList.toggle('on', k === i));
+  }), { rootMargin: '-45% 0px -45% 0px' });
+  document.querySelectorAll('.chapter').forEach(c => ch.observe(c));
+
+  // Count a number up when it's seen.
+  const count = (el, to, ms, dp = 0) => {
+    if (still) { el.textContent = to.toFixed(dp); return; }
+    const t0 = performance.now();
+    const step = t => { const k = Math.min(1, (t - t0) / ms), e = 1 - Math.pow(1 - k, 3);
+      el.textContent = (to * e).toFixed(dp); if (k < 1) requestAnimationFrame(step); };
+    requestAnimationFrame(step);
+  };
+  const once = (el, fn, m = '0px 0px -20% 0px') => {
+    const o = new IntersectionObserver(es => { if (es[0].isIntersecting) { fn(); o.disconnect(); } }, { rootMargin: m });
+    o.observe(el);
+  };
+
+  // Trip ready ring fills.
+  const ring = document.getElementById('ring');
+  once(ring, () => {
+    const n = document.getElementById('ringn');
+    if (still) return;
+    const t0 = performance.now();
+    const step = t => { const k = Math.min(1, (t - t0) / 1400), v = 75 * (1 - Math.pow(1 - k, 3));
+      ring.style.background = `conic-gradient(var(--coral) 0 ${v}%, var(--sand) ${v}% 100%)`; n.textContent = Math.round(v);
+      if (k < 1) requestAnimationFrame(step); };
+    requestAnimationFrame(step);
+  });
+
+  // The poll fills, then a new vote arrives.
+  const poll = document.getElementById('poll');
+  once(poll, () => {
+    const fills = poll.querySelectorAll('.fill');
+    setTimeout(() => fills.forEach(f => f.style.width = f.dataset.w + '%'), 300);
+    setTimeout(() => {
+      const face = document.createElement('i');
+      face.style.background = '#2F8F5B';
+      if (!still) face.animate([{ transform: 'scale(0)' }, { transform: 'scale(1.3)' }, { transform: 'scale(1)' }], { duration: 450, easing: 'ease-out' });
+      document.getElementById('faces').appendChild(face);
+      document.getElementById('leadc').textContent = '3';
+      fills[0].style.width = '15%'; fills[1].style.width = '72%';
+    }, 2200);
+  });
+
+  // The bill splits.
+  once(document.getElementById('split'), () => {
+    count(document.getElementById('amt'), 486, 1300, 2);
+    setTimeout(() => count(document.getElementById('owe'), 121.5, 900, 2), 900);
+  });
+})();
+</script>
 </body>
 </html>
