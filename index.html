@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="site.css?v=3">
+<link rel="stylesheet" href="site.css?v=4">
 <script>document.documentElement.classList.add('js')</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"MobileApplication","name":"Pawsport","operatingSystem":"iOS","applicationCategory":"TravelApplication",
@@ -86,6 +86,22 @@
     <div class="track">
       <span>Kyoto</span><i></i><span>Lisbon</span><i></i><span>Bali</span><i></i><span>Seoul</span><i></i><span>Mexico City</span><i></i><span>Istanbul</span><i></i><span>Hanoi</span><i></i><span>Marrakech</span><i></i><span>Reykjavík</span><i></i><span>Cape Town</span><i></i><span>Shanghai</span><i></i><span>Buenos Aires</span><i></i>
       <span>Kyoto</span><i></i><span>Lisbon</span><i></i><span>Bali</span><i></i><span>Seoul</span><i></i><span>Mexico City</span><i></i><span>Istanbul</span><i></i><span>Hanoi</span><i></i><span>Marrakech</span><i></i><span>Reykjavík</span><i></i><span>Cape Town</span><i></i><span>Shanghai</span><i></i><span>Buenos Aires</span><i></i>
+    </div>
+  </div>
+</section>
+
+<section class="section film" id="film">
+  <div class="wrap">
+    <div class="center">
+      <p class="eyebrow rv">The film</p>
+      <h2 class="h2 rv">Plan less. <em>Wander more.</em></h2>
+      <p class="sub rv">Kyoto, a Bangkok night market and a Shanghai taxi in 48 seconds. The plan, the bill split and the card for the driver are the real app.</p>
+    </div>
+    <div class="player rv" id="player">
+      <a href="film/follow-the-cat.mp4" aria-label="Play the film, 48 seconds, with sound">
+        <img src="img/film-cover.jpg" alt="" width="1280" height="720" loading="lazy">
+        <span class="play"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.6-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg></i><span class="t">Play the film</span><b>0:48</b></span>
+      </a>
     </div>
   </div>
 </section>
@@ -364,6 +380,16 @@
     };
     setTimeout(tick, 2600);
   }
+
+  // The film loads only when someone presses play.
+  const player = document.getElementById('player');
+  player.querySelector('a').addEventListener('click', e => {
+    e.preventDefault();
+    const v = Object.assign(document.createElement('video'), { src: e.currentTarget.href, controls: true, playsInline: true, poster: player.querySelector('img').currentSrc });
+    v.setAttribute('aria-label', 'Pawsport film: Follow the cat');
+    player.replaceChildren(v);
+    v.play().catch(() => {});
+  });
 
   // Header line, hero parallax, laptop opening.
   const top = document.getElementById('top');

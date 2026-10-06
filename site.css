@@ -151,6 +151,26 @@ em, .it { font-family: var(--serif); font-style: italic; font-weight: 400; }
 .section.tight { padding-top: 40px; }
 @media (max-width: 760px) { .section { padding: 80px 0; } }
 
+/* The film: a poster until someone presses play, then the player */
+.section.film { padding-bottom: 0; }
+.player { position: relative; max-width: 1040px; margin: 0 auto; aspect-ratio: 16 / 9; border-radius: var(--r-xl);
+  overflow: hidden; background: #0E0D0B; box-shadow: var(--shadow); }
+.player a, .player img, .player video { display: block; width: 100%; height: 100%; }
+.player img { object-fit: cover; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+.player a:hover img { transform: scale(1.02); }
+.player .play { position: absolute; right: 4%; bottom: 7%; display: flex; align-items: center; gap: 12px; height: 58px;
+  padding: 0 22px 0 9px; border-radius: 999px; background: var(--coral); color: #fff; font-weight: 600; font-size: 16px;
+  box-shadow: 0 14px 30px -10px rgba(0,0,0,.5); transition: transform .25s; }
+.player a:hover .play { transform: scale(1.04); }
+.player .play i { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: #fff; color: var(--coral); }
+.player .play svg { width: 18px; height: 18px; margin-left: 2px; }
+.player .play b { font: 500 13px/1 var(--mono); letter-spacing: .06em; opacity: .85; }
+@media (max-width: 600px) {
+  .player { border-radius: var(--r-lg); }
+  .player .play { height: 50px; padding: 5px; }
+  .player .play .t, .player .play b { display: none; }
+}
+
 /* How it works: an itinerary of three stops */
 .legs { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; position: relative; }
 .legs::before { content: ""; position: absolute; left: 0; right: 0; top: 37px; border-top: 2px dashed var(--faint); }
