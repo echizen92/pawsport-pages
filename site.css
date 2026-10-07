@@ -383,6 +383,7 @@ details p { color: var(--hof); margin: 12px 0 0; max-width: 36em; }
 .globe-labels span { position: absolute; transform: translate(-50%, calc(-100% - 34px)); font-family: var(--serif); font-style: italic; font-size: 22px; line-height: 1; color: var(--ink); white-space: nowrap; text-align: center;
   pointer-events: none; transition: opacity .35s; text-shadow: 0 0 6px var(--paper), 0 0 14px var(--paper), 0 0 2px var(--paper); }
 .globe-labels span.to { color: var(--coral); }
+.globe-labels span.below { transform: translate(-50%, 18px); }
 .globe-labels small { display: block; margin-top: 5px; font: 500 11.5px/1 var(--mono); letter-spacing: .1em; color: var(--muted); }
 .globe-labels small::before { content: "LOCAL "; }
 .globe-leg { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; color: var(--muted); text-transform: uppercase; min-height: 1.4em; margin: 0; }

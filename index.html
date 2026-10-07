@@ -418,7 +418,7 @@
     const near = new IntersectionObserver(es => {
       if (!es[0].isIntersecting || started) return;
       started = true; near.disconnect();
-      import('./globe.js?v=1').then(m => m.start(globeBox, { data: 'globe-data.bin?v=1' })).catch(() => {});
+      import('./globe.js?v=2').then(m => m.start(globeBox, { data: 'globe-data.bin?v=1' })).catch(() => {});
     }, { rootMargin: '600px 0px' });
     near.observe(globeBox);
   }
