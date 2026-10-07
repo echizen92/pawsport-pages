@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="site.css?v=4">
+<link rel="stylesheet" href="site.css?v=5">
 <script>document.documentElement.classList.add('js')</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"MobileApplication","name":"Pawsport","operatingSystem":"iOS","applicationCategory":"TravelApplication",
@@ -331,6 +331,25 @@
   </div>
 </section>
 
+<section class="section globe-sec" id="anywhere">
+  <div class="wrap globe-grid">
+    <div>
+      <p class="eyebrow rv">Anywhere</p>
+      <h2 class="h2 rv">The whole world,<br> <em>day by day.</em></h2>
+      <p class="sub rv">A city, a country or just an idea. Pawsport plans it from real places, wherever you're going.</p>
+      <p class="globe-leg rv" id="globeLeg">12 cities · one lap · 138,190 km</p>
+    </div>
+    <div class="globe-box" role="img" aria-label="A globe with flight routes from Kyoto to Lisbon, Bali, Seoul, Mexico City, Istanbul, Hanoi, Marrakech, Reykjavík, Cape Town, Shanghai, Buenos Aires and back to Kyoto, with a passport stamp at each city.">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="img/globe-dark-700.webp 700w, img/globe-dark-1100.webp 1100w" sizes="(max-width: 860px) min(520px, 100vw), 640px">
+        <img src="img/globe-light-700.webp" srcset="img/globe-light-700.webp 700w, img/globe-light-1100.webp 1100w" sizes="(max-width: 860px) min(520px, 100vw), 640px" alt="" width="1100" height="1100" loading="lazy" decoding="async">
+      </picture>
+      <canvas aria-hidden="true"></canvas>
+      <div class="globe-labels" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
 <section class="section tight">
   <div class="wrap">
     <div class="final rv">
@@ -390,6 +409,19 @@
     player.replaceChildren(v);
     v.play().catch(() => {});
   });
+
+  // The globe: its poster shows first; the live globe loads as it nears the
+  // screen, unless motion is reduced or the browser is saving data.
+  const globeBox = document.querySelector('.globe-box');
+  if (!still && !navigator.connection?.saveData) {
+    let started = false;
+    const near = new IntersectionObserver(es => {
+      if (!es[0].isIntersecting || started) return;
+      started = true; near.disconnect();
+      import('./globe.js?v=1').then(m => m.start(globeBox, { data: 'globe-data.bin?v=1' })).catch(() => {});
+    }, { rootMargin: '600px 0px' });
+    near.observe(globeBox);
+  }
 
   // Header line, hero parallax, laptop opening.
   const top = document.getElementById('top');
