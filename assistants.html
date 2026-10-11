@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pawsport for ChatGPT and Claude</title>
+<meta name="description" content="Plan a trip with ChatGPT or Claude, then bring it into Pawsport with every place checked on the map — even in mainland China.">
+<link rel="canonical" href="https://pawsport.kachingz.com/assistants.html">
+<meta name="theme-color" content="#F4553A">
+<meta property="og:title" content="Pawsport for ChatGPT and Claude">
+<meta property="og:description" content="Plan with your assistant. Travel with Pawsport. Every place checked on the map, even in mainland China.">
+<link rel="icon" href="img/icon-96.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="site.css?v=6">
+</head>
+<body class="doc-page">
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="img/icon-96.png" alt="">Pawsport</a>
+    <nav class="nav">
+      <a class="hide-sm" href="./#features">Features</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </div>
+</header>
+<main class="doc"><div class="narrow">
+<p class="kicker">For ChatGPT, Claude and other assistants</p>
+<h1>Plan with your assistant. Travel with Pawsport.</h1>
+<p class="lede">Add Pawsport to ChatGPT or Claude and ask for your trip as you normally would. Your assistant looks up each place; Pawsport checks every one on the map, says which didn't check out, and hands you a link that opens the trip in Pawsport.</p>
+
+<div class="stub" aria-label="The Pawsport connector address">
+  <div class="stub-label">Connector address</div>
+  <code class="stub-url" id="mcp-url">https://pawsport.kachingz.com/pawsport/mcp</code>
+  <button class="btn btn-ink btn-small" type="button" data-copy="mcp-url">Copy</button>
+  <div class="stub-meta"><span>Sign-in: none</span><span>Works with: ChatGPT · Claude · any MCP client</span></div>
+</div>
+
+<h2>Add it</h2>
+<ol class="steps">
+  <li><b>Claude</b> (web or desktop) — open <i>Settings</i> (or <i>Customize</i>) → <i>Connectors</i> → <i>Add custom connector</i>. Name it Pawsport, paste the address, and choose <i>Add</i>. On a Team or Enterprise plan, an owner adds it for the organisation first.</li>
+  <li><b>ChatGPT</b> (web) — open <i>Settings</i> → <i>Apps &amp; Connectors</i> → <i>Advanced settings</i> and turn on <i>Developer mode</i>. Back in <i>Apps &amp; Connectors</i>, choose <i>Create</i>, name it Pawsport, paste the address, set authentication to <i>No authentication</i>, and create it. In a Business workspace an admin may need to allow it.</li>
+  <li><b>Claude Code</b> — run <code>claude mcp add --transport http pawsport https://pawsport.kachingz.com/pawsport/mcp</code></li>
+</ol>
+<p class="note">The menus move from time to time; if a name doesn't match, look for “connectors” or “apps” in your assistant's settings.</p>
+
+<h2>Then ask</h2>
+<div class="chat">
+  <p class="you">Plan 5 days in Shanghai and Hangzhou for two of us — food, old streets, one day in the tea hills. Put it in Pawsport.</p>
+  <p class="ans">Done — 18 of 19 places checked out. Lao Wang's noodles wasn't found, so I swapped in Wei Xiang Zhai. Here's your link: <span class="mono">pawsport.kachingz.com/app/?import=…</span></p>
+</div>
+<p>Open the link on your phone or computer. You'll see the trip day by day on a map, with anything worth a second look marked. On iPhone, copy the link and paste it into Pawsport (new trip → <i>Other ways</i> → <i>From ChatGPT, Gemini or Muse</i>); with Pawsport Pro, <i>Add to my trips</i> on the page puts it on your phone too.</p>
+
+<h2>What Pawsport checks</h2>
+<table>
+  <tr><th>Where</th><th>How each place is found</th></tr>
+  <tr><td>Most of the world</td><td>Its listing on Google Maps, by name and city. A place that has closed for good, or that turns up far from the rest of the trip, is flagged.</td></tr>
+  <tr><td>Mainland China</td><td>Google lists few shops and restaurants there, so your assistant also gives the Chinese name and the Chinese address down to the door number (号), from Amap or Dianping — and Pawsport places it at that building. An Amap link works too. The Chinese name and address go on the stop, ready to show a taxi driver.</td></tr>
+  <tr><td>Anything it can't find</td><td>Shown as not found, never dropped or guessed — and your assistant is told what to look up again.</td></tr>
+</table>
+
+<h2>No connector? Use the prompt</h2>
+<p>Any assistant can write a plan Pawsport reads. Paste this at the end of your request, then paste the answer into Pawsport (new trip → <i>Other ways</i> → <i>From ChatGPT, Gemini or Muse</i>) or into <a href="/app/">Pawsport on the web</a>.</p>
+<div class="prompt">
+  <pre id="prompt">Plan my trip, then give me the final itinerary as one JSON code block in the Pawsport itinerary format (pawsport-itinerary/1) so I can import it into the Pawsport app.
+
+Format:
+{&quot;format&quot;:&quot;pawsport-itinerary/1&quot;,&quot;title&quot;:&quot;…&quot;,&quot;destination&quot;:&quot;City, Country&quot;,&quot;start_date&quot;:&quot;YYYY-MM-DD&quot;,&quot;days&quot;:[{&quot;day&quot;:1,&quot;date&quot;:&quot;YYYY-MM-DD&quot;,&quot;stops&quot;:[{&quot;name&quot;:&quot;Name as on Google Maps&quot;,&quot;local_name&quot;:&quot;name in local script&quot;,&quot;city&quot;:&quot;…&quot;,&quot;address&quot;:&quot;street address&quot;,&quot;local_address&quot;:&quot;address in local script&quot;,&quot;time&quot;:&quot;HH:MM&quot;,&quot;slot&quot;:&quot;morning|afternoon|evening&quot;,&quot;category&quot;:&quot;sight|food|cafe|shopping|nightlife|nature|museum|activity|stay|transport|other&quot;,&quot;map_link&quot;:&quot;&quot;,&quot;notes&quot;:&quot;…&quot;}]}]}
+
+Rules: one real place per stop, by its exact Google Maps name. Search the web to check each place exists and is open. Never invent addresses, links or coordinates — leave a field out if unsure. For mainland China, find each place&#x27;s Chinese name and its full Chinese address down to the door number (号) on Amap or Dianping and put them in local_name and local_address. Only include map_link if I gave you the link or you copied it from a page.</pre>
+  <button class="btn btn-soft btn-small" type="button" data-copy="prompt">Copy the prompt</button>
+</div>
+
+<h2>Or a spreadsheet</h2>
+<p>Prefer a sheet? <a href="pawsport-trip-template.csv" download>Download the template</a> and import it from <i>Other ways</i> → <i>From a file you already have</i>. Only <i>Place</i> is needed. For mainland China, fill in <i>Local name</i> and <i>Local address</i> in Chinese, or paste an Amap link in <i>Map link</i>. Sheets made from the older six-column template still import.</p>
+
+<h2>Privacy</h2>
+<p>The connector has no sign-in and doesn't know who you are. Pawsport keeps the itinerary your assistant sends — places, days, times and notes — for 30 days so the link works, and checks its places with Google and Amap. Pawsport doesn't run your request through an AI of its own; your conversation stays with your assistant, under its own privacy policy. Details are on the <a href="privacy.html">privacy page</a>.</p>
+</div></main>
+<footer>
+  <div class="wrap">
+    <span>© 2026 Pawsport · <a href="mailto:pawsport@agentmail.to">pawsport@agentmail.to</a></span>
+    <nav>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="support.html">Support</a>
+      <a href="./">Home</a>
+    </nav>
+  </div>
+</footer>
+<script>
+document.querySelectorAll('[data-copy]').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var el = document.getElementById(b.getAttribute('data-copy')), text = el.textContent, label = b.textContent;
+    var done = function () { b.textContent = 'Copied'; setTimeout(function () { b.textContent = label; }, 1600); };
+    var select = function () { var r = document.createRange(); r.selectNodeContents(el); var s = getSelection(); s.removeAllRanges(); s.addRange(r); };
+    if (navigator.clipboard) navigator.clipboard.writeText(text).then(done, select); else select();
+  });
+});
+</script>
+</body>
+</html>

@@ -10,7 +10,7 @@
 <link rel="icon" href="img/icon-96.png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="site.css?v=5">
+<link rel="stylesheet" href="site.css?v=6">
 </head>
 <body class="doc-page">
 <header class="top">
@@ -25,7 +25,7 @@
 </header>
 <main class="doc"><div class="narrow">
 <h1>Privacy</h1>
-<p class="meta">Last updated 8 October 2026</p>
+<p class="meta">Last updated 12 October 2026</p>
 
 <p>Pawsport plans trips. This page says what it keeps, where, and why — in plain words. The short version: most of your trip lives on your phone; the server keeps only what a feature you use needs; nothing is sold, and there is no advertising or tracking.</p>
 
@@ -48,6 +48,7 @@
   <tr><td>Your position, when you look for places near you — logging where you are, nearby search, recommended places, or asking Pawsport for somewhere nearby during a trip</td><td>To look up the places around you. It is rounded to about 100 metres for questions, used for that lookup, and not stored with your identifier.</td></tr>
   <tr><td>Your passport's country and a trip's country, when Trip ready checks the entry rules</td><td>To look up the visa, passport and arrival-card rules for that pair of countries. The answer is kept against the two countries so the next traveller with the same passport doesn't need a new lookup — not against you or your identifier. Your passport's expiry date is never sent.</td></tr>
   <tr><td>A file you give Pawsport to plan from, if you have Pawsport Pro: a spreadsheet, a document or a PDF</td><td>To find the places in it and plan them into your trip. Only the places and their days, dates, times, areas and notes go to the AI, never booking references or phone numbers. It is held in the server's memory for up to 2 hours, so you can keep asking about it in the same chat, and is never written to disk.</td></tr>
+  <tr><td>An itinerary sent to Pawsport through its connector for ChatGPT, Claude or another assistant, or made into an import link: the trip's title, its places (with their local names, addresses and map links if given), days, times and notes</td><td>So the import link can show the trip and you can bring it into Pawsport. Anyone with the link can open it, as with a shared trip. The connector has no sign-in, so it is not linked to you or your identifier. Deleted 30 days after it was made.</td></tr>
   <tr><td>Emails you forward to Pawsport</td><td>To read the booking out of them. The booking waits for you to add or dismiss it.</td></tr>
   <tr><td>Cats you post to Locals: the photo, a caption and a rounded location</td><td>To show them to other travellers. The location is rounded so it never points to a doorstep.</td></tr>
   <tr><td>Places you check in at, guides you rate or report, people you block</td><td>For your stamps, and to keep shared content honest.</td></tr>
@@ -66,7 +67,8 @@
 <p>Pawsport uses a few services to do its job, and sends each only what that job needs:</p>
 <ul>
   <li><b>AI providers</b> — the text of a request (for example "5 days in Kyoto, mostly food", a booking confirmation you import, or a plan you paste from another assistant) is sent to the AI model that answers it. For entry rules, only the two countries are sent, to a model that searches official sources. When you ask about a trip or a place on it, the trip's plan, the hotels and bookings for its dates, which nights don't have a stay yet, your passport's country with the entry rules Trip ready found (never its expiry date), who is coming if you set it in How you travel (the number of adults and children's ages), the airport or city you usually fly from, your phone's local time and — during the trip — your rounded position go with the question, so the answer can be about where you are, where you are staying, what you need to get in, and booking links can be set for everyone going. When you ask in a group, the names of the people in it, its recent bills and balances, its common fund, open polls and shared plan go with the question, so the answer — or the bill, poll or suggestion it fills in for you to check — is about that group. None of it is sent with your identifier, and answers that use your own bookings are not kept to answer anyone else.</li>
-  <li><b>Place and map data</b> — place names are looked up with OpenStreetMap (Nominatim and OpenFreeMap), Wikipedia/Wikimedia and Google Places, for search, maps, opening hours and photos.</li>
+  <li><b>Place and map data</b> — place names are looked up with OpenStreetMap (Nominatim and OpenFreeMap), Wikipedia/Wikimedia and Google Places, for search, maps, opening hours and photos. In mainland China, a Chinese address is placed with Google's address lookup, and an Amap link you or your assistant give is opened on Amap to read where the place is.</li>
+  <li><b>Your own assistant</b> — if you add the Pawsport connector to ChatGPT, Claude or another assistant, that assistant sends Pawsport the itinerary and the places to check, and gets back what Pawsport found. Your conversation stays with your assistant, under its own provider's privacy policy; Pawsport doesn't run it through an AI of its own.</li>
   <li><b>Weather</b> — the forecast, and what a week is usually like, come from Apple Weather. The location of the place on your trip and the date are sent for it — not where you are, and not your identifier. (Earlier versions of the app look this up with Open-Meteo, through Pawsport's server.)</li>
   <li><b>Email</b> — forwarded confirmations arrive through our email provider, AgentMail.</li>
   <li><b>Trip.com and 12Go</b> — when you tap a link to book, you go through Pawsport's server to Trip.com (stays, flights, flight + hotel, trains, buses, eSIMs, airport transfers, tickets, hire cars, cruises) or, for trains, buses and ferries in Southeast Asia, Hong Kong and Macau, to 12Go. They see your visit as coming from Pawsport, and Pawsport may earn a commission if you book, at no extra cost to you. Pawsport sends them only the search itself: the places, the dates and, if you set who is coming in How you travel, the number of adults and children's ages — nothing about who you are. What you book there is covered by their own privacy policies.</li>
@@ -77,6 +79,7 @@
 <h2>Your choices</h2>
 <ul>
   <li>Delete a trip, booking or cat in the app and it is deleted from the server too.</li>
+  <li>An import link from the connector deletes itself 30 days after it was made. To have one deleted sooner, email us the link.</li>
   <li>Stop sharing your location from the group at any time, and your position is deleted from the server straight away.</li>
   <li>Remove your profile picture in the app and it is deleted from the server too.</li>
   <li>Delete a photo you posted in a group (open it, then Delete photo) and it is deleted from the server.</li>
