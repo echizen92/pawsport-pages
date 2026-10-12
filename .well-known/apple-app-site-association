@@ -2,11 +2,38 @@
   "applinks": {
     "details": [
       {
-        "appIDs": ["ETR554P9HN.com.ai.pawsport.app"],
+        "appIDs": [
+          "ETR554P9HN.com.ai.pawsport.app"
+        ],
         "components": [
-          { "/": "/app/*", "?": { "code": "*" }, "comment": "a group invite opens the app" },
-          { "/": "/app/*", "?": { "share": "*" }, "comment": "a shared trip opens the app" },
-          { "/": "/app/*", "?": { "pair": "*" }, "comment": "a computer asking to be signed in" }
+          {
+            "/": "/app/*",
+            "?": {
+              "code": "*"
+            },
+            "comment": "a group invite opens the app"
+          },
+          {
+            "/": "/app/*",
+            "?": {
+              "share": "*"
+            },
+            "comment": "a shared trip opens the app"
+          },
+          {
+            "/": "/app/*",
+            "?": {
+              "pair": "*"
+            },
+            "comment": "a computer asking to be signed in"
+          },
+          {
+            "/": "/app/*",
+            "?": {
+              "import": "*"
+            },
+            "comment": "an itinerary from ChatGPT or Claude opens in the app"
+          }
         ]
       }
     ]
