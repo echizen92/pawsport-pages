@@ -1,5 +1,6 @@
-﻿Day,Date,Place,City,Time,Notes,Local name,Address,Local address,Map link
-1,,Senso-ji,Tokyo,Morning,Go early before the crowds,浅草寺,2-3-1 Asakusa,,
-1,,Ueno Park,Tokyo,14:00,,,,,
-2,,teamLab Planets,Tokyo,Evening,Book tickets ahead,,,,
-3,,Yu Garden,Shanghai,09:00,Tickets on its WeChat account,豫园,218 Anren Street,上海市黄浦区安仁街218号,
+﻿Day,Date,Place,City,Time,Notes,Category,Local name,Address,Local address,Map link
+1,,Senso-ji,Tokyo,Morning,Go early before the crowds,Sight,浅草寺,2-3-1 Asakusa,,
+1,,Ueno Park,Tokyo,14:00,,Nature,,,,
+2,,teamLab Planets,Tokyo,Evening,Book tickets ahead,Must-try,,,,
+3,,Yu Garden,Shanghai,09:00,Tickets on its WeChat account,,豫园,218 Anren Street,上海市黄浦区安仁街218号,
+3,,Jia Jia Tang Bao,Shanghai,Lunch,Soup dumplings,Breakfast,佳家汤包,90 Huanghe Road,上海市黄浦区黄河路90号,
