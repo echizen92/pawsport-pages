@@ -11,28 +11,144 @@
 <link rel="canonical" href="https://pawsport.kachingz.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Pawsport">
+<meta property="og:locale" content="en_US">
 <meta property="og:title" content="Pawsport — say where, get a plan">
 <meta property="og:description" content="A travel planner that builds day-by-day plans from real places, keeps every booking in one place, and follows each day with you.">
 <meta property="og:url" content="https://pawsport.kachingz.com/">
-<meta property="og:image" content="https://pawsport.kachingz.com/img/01-where.jpg">
+<meta property="og:image" content="https://pawsport.kachingz.com/img/og-pawsport.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Pawsport: a cat in a flying helmet holding a passport. Plan less. Wander more.">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pawsport — say where, get a plan">
+<meta name="twitter:description" content="A travel planner that builds day-by-day plans from real places, keeps every booking in one place, and follows each day with you.">
+<meta name="twitter:image" content="https://pawsport.kachingz.com/img/og-pawsport.jpg">
+<meta name="twitter:image:alt" content="Pawsport: a cat in a flying helmet holding a passport. Plan less. Wander more.">
 <link rel="icon" href="img/icon-96.png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="site.css?v=9">
+<link rel="preload" href="fonts/InstrumentSerif-latin.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="fonts/Inter-latin.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="site.css?v=11">
 <script>document.documentElement.classList.add('js')</script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"MobileApplication","name":"Pawsport","operatingSystem":"iOS","applicationCategory":"TravelApplication",
- "description":"AI travel planner and itinerary app: day-by-day plans of real places, bookings in one place, Lock Screen trip days and trip recaps.",
- "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://pawsport.kachingz.com/"}
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://pawsport.kachingz.com/#org",
+   "name": "Pawsport",
+   "url": "https://pawsport.kachingz.com/",
+   "logo": "https://pawsport.kachingz.com/img/icon-512.png",
+   "email": "pawsport@agentmail.to",
+   "sameAs": [
+    "https://apps.apple.com/app/id6808585130"
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://pawsport.kachingz.com/#site",
+   "url": "https://pawsport.kachingz.com/",
+   "name": "Pawsport",
+   "inLanguage": "en",
+   "publisher": {
+    "@id": "https://pawsport.kachingz.com/#org"
+   }
+  },
+  {
+   "@type": "MobileApplication",
+   "@id": "https://pawsport.kachingz.com/#app",
+   "name": "Pawsport: AI Travel Itinerary",
+   "alternateName": "Pawsport",
+   "operatingSystem": "iOS 18.0 or later",
+   "applicationCategory": "TravelApplication",
+   "applicationSubCategory": "Trip planner",
+   "description": "AI travel planner and itinerary app for iPhone. Say where you're going and get day-by-day plans of real places checked on Google Maps; keep every booking in one place; plan with friends and split the bills; follow each day on the Lock Screen; and keep a passport of every place you've been.",
+   "url": "https://pawsport.kachingz.com/",
+   "downloadUrl": "https://apps.apple.com/app/id6808585130",
+   "installUrl": "https://apps.apple.com/app/id6808585130",
+   "image": "https://pawsport.kachingz.com/img/og-pawsport.jpg",
+   "screenshot": [
+    "https://pawsport.kachingz.com/img/app/today.webp",
+    "https://pawsport.kachingz.com/img/app/itinerary.webp",
+    "https://pawsport.kachingz.com/img/app/ask.webp",
+    "https://pawsport.kachingz.com/img/app/transit.webp",
+    "https://pawsport.kachingz.com/img/app/reveal.webp"
+   ],
+   "featureList": [
+    "Day-by-day itineraries from a place or an idea",
+    "Every place checked on Google Maps, with opening hours",
+    "Bookings filed by forwarding the confirmation email",
+    "Group trips: a shared plan, polls and split bills in any currency",
+    "Chinese names and addresses to show taxi drivers in mainland China",
+    "Import a plan from ChatGPT or Claude",
+    "Next stop on the Lock Screen and in the Dynamic Island",
+    "Offline maps",
+    "Trip recaps and a passport of stamps"
+   ],
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "category": "free"
+   },
+   "publisher": {
+    "@id": "https://pawsport.kachingz.com/#org"
+   },
+   "inLanguage": "en"
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://pawsport.kachingz.com/#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Is Pawsport on Android?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Not yet. Pawsport is for iPhone. Friends on Android can still join a trip you share: it opens in their browser."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can I plan in ChatGPT or Claude?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Add the Pawsport connector and ask your assistant to put the trip in Pawsport: it checks every place and gives you a link to open in the app. No connector? Paste our prompt instead. Here's how."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do I need an account?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. There's no sign-up, no email and no password. Your trips live on your phone."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can I trust the visa and entry rules?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Pawsport reads them from official sources and shows where and when it checked. Rules change, so always confirm with the embassy before you fly."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How do I delete my data?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "In the app, open your profile and tap Delete my data. It happens straight away. See the privacy policy for what's kept and why."
+     }
+    }
+   ]
+  }
+ ]
+}
 </script>
 </head>
 <body>
 <header class="top" id="top">
   <div class="wrap">
-    <a class="brand" href="./"><img src="img/icon-96.png" alt="">Pawsport</a>
+    <a class="brand" href="./"><img src="img/icon-96.webp" alt="">Pawsport</a>
     <nav class="nav">
       <a class="hide-sm" href="#how">How it works</a>
       <a class="hide-sm" href="#trip">The trip</a>
@@ -71,8 +187,8 @@
         <g class="plane"><path d="M-9 0 L9 0 M2 -7 L6 0 L2 7 M-7 -3 L-5 0 L-7 3" stroke="var(--coral)" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
           <animateMotion dur="9s" begin="1.2s" repeatCount="indefinite" rotate="auto" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".45 0 .55 1"><mpath href="#flight"/></animateMotion></g>
       </svg>
-      <div class="phone px" data-speed="-0.06"><div class="screen"><img src="img/app/today.jpg" alt="Pawsport's Today screen: a 12-day Shanghai trip with the day's stops on a map" width="660" height="1434"></div></div>
-      <img class="livecard px" data-speed="-0.16" src="img/app/live-card.png" alt="The next stop on the Lock Screen: Tirta Empul at 11:53, stop 2 of 4" width="900" height="310">
+      <div class="phone px" data-speed="-0.06"><div class="screen"><img src="img/app/today.webp" fetchpriority="high" alt="Pawsport's Today screen: a Tokyo trip with the day's stops on a map" width="660" height="1434"></div></div>
+      <img class="livecard px" data-speed="-0.16" src="img/app/live-card.webp" alt="The next stop on the Lock Screen: Tirta Empul at 11:53, stop 2 of 4" width="900" height="310">
       <svg class="stamp px" data-speed="0.12" viewBox="0 0 160 160" aria-hidden="true">
         <circle cx="80" cy="80" r="74" fill="none" stroke="currentColor" stroke-width="3"/>
         <circle cx="80" cy="80" r="64" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 4"/>
@@ -101,7 +217,7 @@
     </div>
     <div class="player rv" id="player">
       <a href="film/follow-the-cat.mp4" aria-label="Play the film, 48 seconds, with sound">
-        <img src="img/film-cover.jpg" alt="" width="1280" height="720" loading="lazy">
+        <img src="img/film-cover.webp" alt="" width="1280" height="720" loading="lazy">
         <span class="play"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.6-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg></i><span class="t">Play the film</span><b>0:48</b></span>
       </a>
     </div>
@@ -129,49 +245,49 @@
       <div class="sticky" aria-hidden="true">
         <div class="ring"></div>
         <div class="phone"><div class="screen" id="screens">
-          <img class="on" src="img/app/itinerary.jpg" alt="">
-          <img src="img/app/explore.jpg" alt="" loading="lazy">
-          <img src="img/app/ask.jpg" alt="" loading="lazy">
-          <img src="img/app/transit.jpg" alt="" loading="lazy">
-          <div class="lock"><div class="di"><span><img src="img/icon-96.png" alt="">Tirta Empul</span><b>11:53</b></div><span class="d">Friday 25 September</span><span class="tm">9:41</span><img class="lc" src="img/app/live-card.png" alt="" loading="lazy"></div>
-          <img src="img/app/recap-cover.jpg" alt="" loading="lazy">
+          <img class="on" src="img/app/itinerary.webp" alt="" loading="lazy">
+          <img src="img/app/explore.webp" alt="" loading="lazy">
+          <img src="img/app/ask.webp" alt="" loading="lazy">
+          <img src="img/app/transit.webp" alt="" loading="lazy">
+          <div class="lock"><div class="di"><span><img src="img/icon-96.webp" alt="">Tirta Empul</span><b>11:53</b></div><span class="d">Friday 25 September</span><span class="tm">9:41</span><img class="lc" src="img/app/live-card.webp" alt="" loading="lazy"></div>
+          <img src="img/app/recap-cover.webp" alt="" loading="lazy">
         </div></div>
       </div>
       <div>
         <article class="chapter" data-i="0">
-          <figure><div class="phone"><div class="screen"><img src="img/app/itinerary.jpg" alt="A day of the itinerary with stops, walking times and bookings" loading="lazy"></div></div></figure>
+          <figure><div class="phone"><div class="screen"><img src="img/app/itinerary.webp" alt="A day in Tokyo: its stops, and the train between each one" loading="lazy"></div></div></figure>
           <p class="n">01 — Planning</p>
           <h3>Plans you can actually walk.</h3>
           <p>Every stop exists. Pawsport checks Google Maps for ratings and opening hours as it plans, so you don't arrive at a museum that shut on Mondays.</p>
           <ul class="ticks"><li>Each day kept to one or two areas</li><li>Walking and transit times between stops</li><li>Drag to reorder, swap anything</li></ul>
         </article>
         <article class="chapter" data-i="1">
-          <figure><div class="phone"><div class="screen"><img src="img/app/explore.jpg" alt="Explore Shanghai: top sights with photos and ratings" loading="lazy"></div></div></figure>
+          <figure><div class="phone"><div class="screen"><img src="img/app/explore.webp" alt="Explore Shanghai: top sights with photos and ratings" loading="lazy"></div></div></figure>
           <p class="n">02 — Explore</p>
           <h3>Every city, opened up.</h3>
           <p>Top sights, food, cafés and markets with photos and ratings, how to get around, and day trips worth taking. Add anything to a day in one tap.</p>
         </article>
         <article class="chapter" data-i="2">
-          <figure><div class="phone"><div class="screen"><img src="img/app/ask.jpg" alt="Asking Pawsport for soup dumplings near Yu Garden, and it adds one to the plan" loading="lazy"></div></div></figure>
+          <figure><div class="phone"><div class="screen"><img src="img/app/ask.webp" alt="Asking Pawsport for soup dumplings near Yu Garden, and it adds one to the plan" loading="lazy"></div></div></figure>
           <p class="n">03 — Ask</p>
           <h3>Ask about anything. It changes the plan.</h3>
           <p>What's open late near your hotel, whether you need cash, a quieter spot for the afternoon. Pawsport answers, checks the place is open, and adds it when you say so.</p>
         </article>
         <article class="chapter" data-i="3">
-          <figure><div class="phone"><div class="screen"><img src="img/app/transit.jpg" alt="A flight from Shanghai to Singapore filed with its gate and terminal" loading="lazy"></div></div></figure>
+          <figure><div class="phone"><div class="screen"><img src="img/app/transit.webp" alt="A flight from Shanghai to Singapore filed with its gate and terminal" loading="lazy"></div></div></figure>
           <p class="n">04 — Bookings</p>
           <h3>Forward the email. That's it.</h3>
           <p>Forward the confirmation, or drop in a PDF or screenshot. Flights, hotels, trains, ferries, cars and tables land on the right day, with the reference to hand.</p>
         </article>
         <article class="chapter" data-i="4">
-          <figure><div class="phone"><div class="screen"><div class="lock"><div class="di"><span><img src="img/icon-96.png" alt="">Tirta Empul</span><b>11:53</b></div><span class="d">Friday 25 September</span><span class="tm">9:41</span><img class="lc" src="img/app/live-card.png" alt="The next stop and its time on the Lock Screen" loading="lazy"></div></div></div></figure>
+          <figure><div class="phone"><div class="screen"><div class="lock"><div class="di"><span><img src="img/icon-96.webp" alt="">Tirta Empul</span><b>11:53</b></div><span class="d">Friday 25 September</span><span class="tm">9:41</span><img class="lc" src="img/app/live-card.webp" alt="The next stop and its time on the Lock Screen" loading="lazy"></div></div></div></figure>
           <p class="n">05 — On the day</p>
           <h3>Know when to leave.</h3>
           <p>Where you're going next and how long until you need to leave, on the Lock Screen and in the Dynamic Island. Check in with a tap, or ask Siri what's next.</p>
           <ul class="ticks"><li>Home Screen widgets for the day</li><li>Maps and your plan that work with no signal</li></ul>
         </article>
         <article class="chapter" data-i="5">
-          <figure><div class="phone"><div class="screen"><img src="img/app/recap-cover.jpg" alt="The recap of a Shanghai trip" loading="lazy"></div></div></figure>
+          <figure><div class="phone"><div class="screen"><img src="img/app/recap-cover.webp" alt="The recap of a Shanghai trip" loading="lazy"></div></div></figure>
           <p class="n">06 — Afterwards</p>
           <h3>Come home with the story.</h3>
           <p>Check in at each stop and add your photos. When you're home there's a logbook and a recap to share, and every place you went is stamped in your passport.</p>
@@ -236,7 +352,7 @@
           <h3>Every cat you meet is a card.</h3>
           <p>Snap the cats you meet on the way and build a collection. Some of them are legends.</p>
         </div>
-        <img src="img/app/reveal.jpg" alt="A legendary cat card for Lokum, met in Türkiye" loading="lazy">
+        <img src="img/app/reveal.webp" alt="A legendary cat card for Lokum, met in Türkiye" loading="lazy">
       </div>
     </div>
   </div>
@@ -278,7 +394,7 @@
     <h2 class="h2 rv">Plan on your <em>computer.</em></h2>
     <p class="sub rv">The big screen for the big decisions. Your trips stay in step between your phone and your browser.</p>
     <div class="laptop" id="laptop">
-      <div class="lid"><img src="img/app/web.jpg" alt="The Pawsport planner in a web browser: a Kyoto trip with a map and the day's stops" width="1600" height="1000" loading="lazy"></div>
+      <div class="lid"><img src="img/app/web.webp" alt="The Pawsport planner in a web browser: a Kyoto trip with a map and the day's stops" width="1600" height="1000" loading="lazy"></div>
       <div class="base"></div>
     </div>
   </div>
@@ -389,7 +505,7 @@
 <section class="section tight">
   <div class="wrap">
     <div class="final rv">
-      <img class="cat" src="img/icon-192.png" alt="">
+      <img class="cat" src="img/icon-192.webp" alt="" loading="lazy" width="192" height="192">
       <h2>Where to next?</h2>
       <p>Plan your first trip free, on iPhone.</p>
       <a class="badge-link" href="https://apps.apple.com/app/id6808585130?ct=site"><img class="store-badge" src="img/app-store-badge-black.svg" alt="Download on the App Store" width="174" height="58" loading="lazy"></a>

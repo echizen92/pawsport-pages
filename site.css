@@ -1,3 +1,14 @@
+/* Fonts, self-hosted (13 Oct 2026): no third-party request before first paint,
+   and the page still renders where Google is blocked (mainland China). */
+@font-face { font-family: 'Instrument Serif'; font-style: normal; font-weight: 400; font-display: swap; src: url(fonts/InstrumentSerif-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Instrument Serif'; font-style: normal; font-weight: 400; font-display: swap; src: url(fonts/InstrumentSerif-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Instrument Serif'; font-style: italic; font-weight: 400; font-display: swap; src: url(fonts/InstrumentSerif-Italic-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Instrument Serif'; font-style: italic; font-weight: 400; font-display: swap; src: url(fonts/InstrumentSerif-Italic-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 400 700; font-display: swap; src: url(fonts/Inter-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 400 700; font-display: swap; src: url(fonts/Inter-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'JetBrains Mono'; font-style: normal; font-weight: 400 500; font-display: swap; src: url(fonts/JetBrainsMono-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'JetBrains Mono'; font-style: normal; font-weight: 400 500; font-display: swap; src: url(fonts/JetBrainsMono-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
 /* Pawsport: the public site. A travel journal: warm paper, a serif that
    talks like a guidebook, mono for the ticket details, one coral accent.
    Legal pages (privacy, terms, support, 404) share the top bar, .doc and footer. */
@@ -426,7 +437,10 @@ footer a:hover { color: var(--ink); }
 .js .rv.in { opacity: 1; transform: none; }
 /* The hero plays on first paint, not on scroll. */
 .js .hero .rv { opacity: 1; transform: none; transition: none; animation: rise .9s var(--d, 0s) cubic-bezier(.2,.7,.2,1) both; }
-@keyframes rise { from { opacity: 0; transform: translateY(28px); } }
+/* From 1%, not 0: it looks the same, and the browser counts the headline as
+   painted at once (an element at opacity 0 isn't, which made LCP wait for the
+   staggered fade: 4.9 s on a phone). */
+@keyframes rise { from { opacity: .01; transform: translateY(28px); } }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .001s !important; animation-iteration-count: 1 !important; transition-duration: .001s !important; scroll-behavior: auto !important; }
@@ -489,7 +503,7 @@ footer a:hover { color: var(--ink); }
 @media (max-width: 900px) { .assist { grid-template-columns: minmax(0, 1fr); gap: 36px; } }
 .new-pill { display: inline-flex; align-items: center; gap: 10px; margin-top: 18px; padding: 7px 16px 7px 7px; border-radius: 999px;
   background: var(--card); border: 1px solid var(--line); color: var(--ink); text-decoration: none; font-size: 15px; font-weight: 500; max-width: 100%; }
-.new-pill span { background: var(--coral); color: #fff; border-radius: 999px; padding: 3px 10px; font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; flex: none; }
+.new-pill span { background: var(--coral-deep); color: #fff; border-radius: 999px; padding: 3px 10px; font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; flex: none; }
 .new-pill:hover { border-color: var(--coral); }
 .assist .stub { margin: 0 0 28px; }
 .assist .stub-url { font-size: 15px; white-space: nowrap; overflow-wrap: normal; }
