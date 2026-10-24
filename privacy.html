@@ -41,7 +41,7 @@
 </header>
 <main class="doc"><div class="narrow">
 <h1>Privacy</h1>
-<p class="meta">Last updated 12 October 2026</p>
+<p class="meta">Last updated 24 October 2026</p>
 
 <p>Pawsport plans trips. This page says what it keeps, where, and why — in plain words. The short version: most of your trip lives on your phone; the server keeps only what a feature you use needs; nothing is sold, and there is no advertising or tracking.</p>
 
@@ -74,7 +74,8 @@
   <tr><td>Facts about the places people look up — a place's name, address, location, rating, opening hours, price level, phone, website, a short description and references to its photos (not the photos themselves), mostly from Google Places</td><td>So a place looked up once doesn't have to be looked up again for the next traveller. Kept against the place, never against you or your identifier, and refreshed after about a month.</td></tr>
   <tr><td>A count of taps on links to Trip.com and 12Go, by day, by kind (stays, flights, trains and so on) and by the screen the link was on</td><td>To know which suggestions are useful. It's a number only: nothing about who tapped.</td></tr>
   <tr><td>A problem you report with an AI answer or plan: the reason you pick, your note if you add one, and the question and answer (or the plan)</td><td>To fix what Pawsport gets wrong. Only sent when you tap Report and Send. Deleted when you delete your data.</td></tr>
-  <tr><td>A notification token</td><td>To send the reminders you turn on.</td></tr>
+  <tr><td>Help chats: what you write in Help, the replies, and five facts about the app — its version and build, iPhone or web, the system version (for example iOS 18.4) and whether you have Pawsport Pro. Kept by Pawsport's help service (support.kachingz.com) under a random Help identifier of its own, not the one the rest of Pawsport knows you by. Your trips, bookings and location are never part of a Help chat</td><td>To answer you, and so the Pawsport team can reply when the assistant can't. Kept for 90 days after the chat's last message, then deleted. Delete it any time in Help (Delete chat). An idea you suggest, or why you're leaving, is also noted on its own in a few words without your personal details, so the team can count them; that note stays after the chat is deleted.</td></tr>
+  <tr><td>A notification token</td><td>To send the reminders you turn on, and a reply from the Pawsport team in Help.</td></tr>
   <tr><td>Which version of the app you have (for example 1.0.10, build 159): only the latest, and when it was last seen</td><td>To know when nobody uses an old version any more, so the server can stop supporting it. Deleted when you delete your data.</td></tr>
   <tr><td>Server logs: your device's IP address, the time, and the address requested — for a booking link, that includes the place, dates and number of guests in it</td><td>To keep the service running and secure (spotting faults and abuse). Not linked to your identifier, and deleted automatically: web server logs after 14 days, the app server's own logs after 7.</td></tr>
 </table>
@@ -86,6 +87,7 @@
   <li><b>Place and map data</b> — place names are looked up with OpenStreetMap (Nominatim and OpenFreeMap), Wikipedia/Wikimedia and Google Places, for search, maps, opening hours and photos. In mainland China, a Chinese address is placed with Google's address lookup, and an Amap link you or your assistant give is opened on Amap to read where the place is.</li>
   <li><b>Your own assistant</b> — if you add the Pawsport connector to ChatGPT, Claude or another assistant, that assistant sends Pawsport the itinerary and the places to check, and gets back what Pawsport found. Your conversation stays with your assistant, under its own provider's privacy policy; Pawsport doesn't run it through an AI of its own.</li>
   <li><b>Weather</b> — the forecast, and what a week is usually like, come from Apple Weather. The location of the place on your trip and the date are sent for it — not where you are, and not your identifier. (Earlier versions of the app look this up with Open-Meteo, through Pawsport's server.)</li>
+  <li><b>Help</b> — before your first message, Help asks whether it may send your messages to Pawsport's help service and on to DeepSeek, an AI service, which writes the reply from Pawsport's help guide. Nothing is sent until you choose Allow. If it can't answer, the Pawsport team reads that chat to reply. Turn this off any time with <i>Help chat uses AI</i> in your profile (on the web, at the bottom of Help).</li>
   <li><b>Email</b> — forwarded confirmations arrive through our email provider, AgentMail.</li>
   <li><b>Trip.com and 12Go</b> — when you tap a link to book, you go through Pawsport's server to Trip.com (stays, flights, flight + hotel, trains, buses, eSIMs, airport transfers, tickets, hire cars, cruises) or, for trains, buses and ferries in Southeast Asia, Hong Kong and Macau, to 12Go. They see your visit as coming from Pawsport, and Pawsport may earn a commission if you book, at no extra cost to you. Pawsport sends them only the search itself: the places, the dates and, if you set who is coming in How you travel, the number of adults and children's ages — nothing about who you are. What you book there is covered by their own privacy policies.</li>
   <li><b>Apple</b> — purchases are made and managed by Apple. Pawsport receives a confirmation that you have Pro, never your payment details. A purchase carries a token made one way from your identifier, so Pawsport can tell the phone that bought it; the token doesn't reveal the identifier.</li>
@@ -95,6 +97,7 @@
 <h2>Your choices</h2>
 <ul>
   <li>Delete a trip, booking or cat in the app and it is deleted from the server too.</li>
+  <li>Delete your Help chat in Help (Delete chat): it is deleted from the help service straight away. Otherwise it is deleted 90 days after its last message. On iPhone, <i>Delete my data</i> deletes it too; on the web, use Delete chat in Help.</li>
   <li>An import link from the connector deletes itself 30 days after it was made. To have one deleted sooner, email us the link.</li>
   <li>Stop sharing your location from the group at any time, and your position is deleted from the server straight away.</li>
   <li>Remove your profile picture in the app and it is deleted from the server too.</li>
